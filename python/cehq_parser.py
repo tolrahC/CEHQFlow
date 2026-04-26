@@ -1,9 +1,23 @@
+#
+# CEHQ → InfluxDB Exporter
+# ------------------------
+# Fetches hydrometric data (water level, flow rate) from the CEHQ public portal
+# and ingests it incrementally into an InfluxDB v2 database.
+#
+# Usage:
+#   python cehq_exporter.py --station 030106 --url http://localhost:8086 \
+#                           --token <token> --org <org>
+#
+#
+# Made with help from Claude. Contributions welcome! See GitHub repo for details.
+# See README.md for full documentation.
+
 import requests
 import csv
 import io
 import argparse
 from datetime import datetime, timezone, timedelta
-from influxdb_client.client import InfluxDBClient, Point
+from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 # --- Column definitions ---
