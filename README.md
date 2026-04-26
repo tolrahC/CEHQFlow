@@ -21,7 +21,7 @@ Cette application récupère les données hydrométriques du Centre d'expertise 
 
 1. Cloner ce dépôt :
    ```bash
-   git clone <url-du-dépôt>
+   git clone https://github.com/tolrahC/CEHQFlow.git
    cd CEHQFlow
    ```
 
@@ -112,7 +112,7 @@ This application fetches hydrometric data from the Centre d'expertise hydrique d
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/tolrahC/CEHQFlow.git
    cd CEHQFlow
    ```
 
