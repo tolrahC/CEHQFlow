@@ -1,5 +1,7 @@
 # Analyseur de Données de Débit CEHQ
 
+[![GitHub version](https://img.shields.io/github/v/release/tolrahC/CEHQFlow?&sort=semver&display_name=release&label=stable&color=green)](https://github.com/tolrahC/CEHQFlow/releases)
+
 Cette application récupère les données hydrométriques du Centre d'expertise hydrique du Québec (CEHQ) et les ingère dans une base de données InfluxDB. Elle analyse les mesures de niveau d'eau (niveau) et de débit (débit) pour les stations spécifiées, gérant les données en heure normale de l'Est (EST) et évitant les entrées dupliquées.
 
 ## Fonctionnalités
@@ -29,6 +31,22 @@ Cette application récupère les données hydrométriques du Centre d'expertise 
    ```bash
    pip install -r python/requirements.txt
    ```
+
+### Installation avec Docker (Image Pré-construite)
+
+Pour une installation simplifiée avec une image Docker pré-construite :
+
+1. Tirer l'image depuis GHCR :
+   ```bash
+   docker pull ghcr.io/tolrahc/cehqflow:latest
+   ```
+
+2. Exécuter le conteneur :
+   ```bash
+   docker run ghcr.io/tolrahc/cehqflow:latest --station 030106 --url http://host.docker.internal:8086 --token <token> --org <org>
+   ```
+
+Note : Ajuster l'URL InfluxDB si nécessaire.
 
 ## Utilisation
 
@@ -91,6 +109,8 @@ Voir [LICENSE](LICENSE)
 
 # CEHQ Flow Data Parser
 
+[![GitHub version](https://img.shields.io/github/v/release/tolrahC/CEHQFlow?&sort=semver&display_name=release&label=stable&color=green)](https://github.com/tolrahC/CEHQFlow/releases)
+
 This application fetches hydrometric data from the Centre d'expertise hydrique du Québec (CEHQ) and ingests it into an InfluxDB database. It parses water level (niveau) and flow rate (débit) measurements for specified stations, handling data in Eastern Standard Time (EST) and avoiding duplicate entries.
 
 ## Features
@@ -120,6 +140,22 @@ This application fetches hydrometric data from the Centre d'expertise hydrique d
    ```bash
    pip install -r python/requirements.txt
    ```
+
+### Installation with Docker (Pre-built Image)
+
+For a simplified installation with a pre-built Docker image:
+
+1. Pull the image from GHCR:
+   ```bash
+   docker pull ghcr.io/tolrahc/cehqflow:latest
+   ```
+
+2. Run the container:
+   ```bash
+   docker run ghcr.io/tolrahc/cehqflow:latest --station 030106 --url http://host.docker.internal:8086 --token <token> --org <org>
+   ```
+
+Note: Adjust the InfluxDB URL if necessary.
 
 ## Usage
 
